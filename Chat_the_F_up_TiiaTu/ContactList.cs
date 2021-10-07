@@ -3,12 +3,15 @@ using System.Collections.Generic;
 
 namespace Chat_the_F_up_TiiaTu
 {
-    class ContactList : Person
+    class ContactList 
     {
-        List<string> nameList = new List<string>
+        public List<Person> nameList = new();
+        public void AddPerson(Person personAdd)
         {
-            Person.
+            this.nameList.Add(personAdd);
         }
+            
+        
 
         public static void Menu()
         {

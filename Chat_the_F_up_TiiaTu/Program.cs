@@ -6,9 +6,14 @@ namespace Chat_the_F_up_TiiaTu
     {
         static void Main()
         {
-            ContactList contact = new ContactList();
+            ContactList contacts = new ContactList();
 
-            ContactList.Menu();
+            Person myContact = new();
+            myContact.FirstName = "Nisse";
+            myContact.LastName = "Solberg";
+            myContact.Age = 35;
+
+            
 
         }
     }
