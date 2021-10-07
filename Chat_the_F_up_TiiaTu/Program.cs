@@ -2,19 +2,21 @@
 
 namespace Chat_the_F_up_TiiaTu
 {
-    class Program
+    class Program : Person
     {
         static void Main()
         {
+
+            ContactList.Menu();
             ContactList contacts = new ContactList();
 
-            Person myContact = new();
-            myContact.FirstName = "Nisse";
-            myContact.LastName = "Solberg";
-            myContact.Age = 35;
+          
 
-            
-
+        }
+        static string ReadInput(string input)
+        {
+            input = Console.ReadLine();          
+            return input;
         }
     }
 }

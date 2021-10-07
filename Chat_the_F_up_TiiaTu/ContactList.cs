@@ -3,34 +3,70 @@ using System.Collections.Generic;
 
 namespace Chat_the_F_up_TiiaTu
 {
-    class ContactList 
+    class ContactList
     {
-        public List<Person> nameList = new();
-        public void AddPerson(Person personAdd)
+        public static List<Person> nameList = new()
         {
-            this.nameList.Add(personAdd);
-        }
-            
+            new Person { Name = "Kalle Berg", Age = 23, Alias = "Kllbrg", Email = "kalle.berg@gmail.com", FavoriteActor = "Angelina Jolie", FavoriteAnimal = "Horse" },
+            new Person { Name = "Minna Nilsson", Age = 30, Alias = "Minski", FavoriteFilmGenre = "Skräk" }
+        };
+        
         
 
         public static void Menu()
         {
             Console.WriteLine("MENU");
-            Console.WriteLine("Choose the number that indicates the option");
-            Console.WriteLine("1 - Show the list \n2 - Add a person to the list \n3 - Update the list \n4 - Delete a person from the list \n5 - Sort the list");
-            Console.ReadKey();
-            Console.WriteLine("You chose");
+            Console.WriteLine("[ 1 ]- Show the list \n[ 2 ] - Add a person to the list \n[ 3 ] - Update the list \n[ 4 ] - Delete a person from the list \n[ 5 ] - Sort the list");
+            Console.Write("\nSelect an option: ");
+            ChooseAction();
         }
-        static void ChooseAction()
+
+        public static void ChooseAction()
         {
-            switch (true)
+            string input = Console.ReadLine();
+            if (input is "1")
             {
-                case "1":
-                    Console.WriteLine("Show the list");
-                    nameList
-                default:
-                    break;
+                ShowList();
             }
+            //else if (input is "2")
+            //{
+            //    AddPerson();
+            //}
+
+            //switch (Console.ReadLine())
+            //{
+            //    case "1":
+            //        ShowList();
+            //        break;
+            //    //case "2":
+            //    //    this.AddPerson();
+            //    //    break;
+            //    case "3":
+            //        UpdateList();
+            //        break;
+            //    case "4":
+            //        DeletePerson();
+            //        break;
+            //    case "5":
+            //        SortList();
+            //        break;
+            //    default:
+            //        return;
+        }
+
+        private static void ShowList()
+        {
+            foreach (var item in nameList)
+            {
+                Console.WriteLine();
+            }
+        }
+
+        public void AddPerson(Person personAdd)
+        {
+            nameList.Add(personAdd);
+            Console.ReadLine();
         }
     }
 }
+
