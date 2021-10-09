@@ -15,18 +15,51 @@ namespace Chat_the_F_up_TiiaTu
 
         public static void Menu()
         {
-            Console.WriteLine("MENU");
-            Console.WriteLine("[ 1 ]- Show the list \n[ 2 ] - Add a person to the list \n[ 3 ] - Update the list \n[ 4 ] - Delete a person from the list \n[ 5 ] - Sort the list");
+            Console.WriteLine(" _______________________________________");
+            Console.WriteLine("|               MENU                    |");
+            Console.WriteLine("|---------------------------------------|");
+            Console.WriteLine("| [ 1 ] - Show the list                 |");
+            Console.WriteLine("| [ 2 ] - Add a person to the list      |");
+            Console.WriteLine("| [ 3 ] - Update the list               |");
+            Console.WriteLine("| [ 4 ] - Delete a person from the list |");
+            Console.WriteLine("| [ 5 ] - Sort the list                 |");
+            Console.WriteLine("| [ 6 ] - Exit                          |");
+            Console.WriteLine("|_______________________________________|");
             Console.Write("\nSelect an option: ");
             ChooseAction();
         }
 
         public static void ChooseAction()
         {
-            string input = Console.ReadLine();
-            if (input is "1")
+            while (true)
             {
-                ShowList();
+                string menuChoise = Console.ReadLine();
+                if (menuChoise is "1")
+                {
+                    ShowList();
+                }
+                ReturnToMenu();
+
+                if (menuChoise is "2")
+                {
+
+                }
+                if (menuChoise is "3")
+                {
+
+                }
+                if(menuChoise is "4")
+                {
+
+                }
+                if (menuChoise is "5")
+                {
+
+                }
+                else
+                {
+                    break;
+                }
             }
             //else if (input is "2")
             //{
@@ -56,8 +89,9 @@ namespace Chat_the_F_up_TiiaTu
 
         private static void ShowList()
         {
-            foreach (var item in nameList)
+            foreach (Person item in nameList)
             {
+                Console.WriteLine(item.Name+ " "+ item.Age+" "+item.Alias+" "+item.Email+" "+item.FavoriteActor+" "+item.FavoriteFilmGenre);
                 Console.WriteLine();
             }
         }
@@ -66,6 +100,14 @@ namespace Chat_the_F_up_TiiaTu
         {
             nameList.Add(personAdd);
             Console.ReadLine();
+        }
+        static string ReturnToMenu()
+        {
+            Console.Write("Press any key to return to MENU ");
+            string input = Console.ReadLine();
+            return input;
+            
+
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Chat_the_F_up_TiiaTu
 {
-    class Program : Person
+    class Program
     {
         static void Main()
         {
