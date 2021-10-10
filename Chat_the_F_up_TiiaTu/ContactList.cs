@@ -47,7 +47,7 @@ namespace Chat_the_F_up_TiiaTu
 
         private static void ChooseSecondMenu()
         {
-            Console.Write("Enter number: ");
+            Console.Write("Enter number: \n");
             int.TryParse(Console.ReadLine(), out int secondMenuChoise);
 
             switch (secondMenuChoise)
@@ -65,7 +65,7 @@ namespace Chat_the_F_up_TiiaTu
         {
             foreach (Person item in nameList)
             {
-                Console.WriteLine($"{item.Name} {item.LastName}\t| [{item.Alias}]\t| ({item.Age})\t| { item.Email}");
+                Console.WriteLine($"{item.Name} {item.LastName}\t| [{item.Alias}]\t| ({item.Age})\t| {item.Email}\t| {item.LinkedIn}");
             }
             Console.ReadLine();
         }
@@ -111,7 +111,7 @@ namespace Chat_the_F_up_TiiaTu
         public static void DeletePerson()
         {
             ShowList();
-            Console.Write("\nEnter the alias of the person you want to delete: ");
+            Console.Write("Enter the alias of the person you want to delete: ");
 
             string givenAlias = Console.ReadLine();
 
@@ -124,14 +124,21 @@ namespace Chat_the_F_up_TiiaTu
                     Thread.Sleep(1000);
                     Console.Clear();
                     return;
-                }              
-            } 
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect input");
+                    Thread.Sleep(1000);
+                    Console.Clear();
+                    return;
+                }
+            }
         }
 
         private static void UpdatePerson()
         {
             ShowList();
-            Console.Write("\nEnter the alias of the person you want to update: ");
+            Console.Write("Enter the alias of the person you want to update: ");
 
             string givenAlias = Console.ReadLine();
 
@@ -150,16 +157,14 @@ namespace Chat_the_F_up_TiiaTu
                     Console.Clear();
                     return;
                 }
+                else if (item.Alias != givenAlias)
+                {
+                    Console.WriteLine("Incorrect input");
+                    Thread.Sleep(1000);
+                    Console.Clear();
+                    break;
+                }
             }
-            //contactlist[index].firstname = console.readline()
-        }
-
-        static string ReturnToMenu()
-        {
-            Console.WriteLine();
-            Console.Write("Press any key to return to MENU ");
-            string input = Console.ReadLine();
-            return input;
         }
     }
 }

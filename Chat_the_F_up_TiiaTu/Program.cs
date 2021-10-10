@@ -11,7 +11,7 @@ namespace Chat_the_F_up_TiiaTu
             while (true)
             {
                 HelperClass.Menu();
-                Console.Write("Enter number:");
+                Console.Write("Enter number: ");
                 int.TryParse(Console.ReadLine(), out int menuChoise);
                 ContactList.CheckAction(menuChoise);
             }
