@@ -16,14 +16,7 @@ namespace Chat_the_F_up_TiiaTu
                 ContactList.CheckAction(menuChoise);
             }
         }
-
-        
-
     }
-
-
-
-
 }
 
       

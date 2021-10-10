@@ -27,7 +27,6 @@ namespace Chat_the_F_up_TiiaTu
             Console.WriteLine("|---------------------------------------|");
             Console.WriteLine("| [ 1 ] - Show all                      |");
             Console.WriteLine("| [ 2 ] - List in alphabetical order    |");
-            Console.WriteLine("| [ 3 ] - List by first letter          |");
             Console.WriteLine("| [ 4 ] - Back to main menu             |");
             Console.WriteLine("|_______________________________________|");
         }
